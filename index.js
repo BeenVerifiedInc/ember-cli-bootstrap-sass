@@ -21,7 +21,7 @@ module.exports = {
     var bootstrapPath   = 'vendor/bootstrap-sass-official/assets';
     var emberBsPath     = 'vendor/ember-addons.bs_for_ember/dist';
     var javascriptsPath = path_join(emberBsPath, 'js');
-    
+
     switch (options.components) {
       case true:
         var jsFiles = fs.readdirSync(path_join(modulePath, javascriptsPath));
@@ -39,7 +39,7 @@ module.exports = {
   // Non-destructively add paths to SASS
   app.options.sassOptions = app.options.sassOptions || {}
   app.options.sassOptions.includePaths = app.options.sassOptions.includePaths || []
-  
+
 	app.options.sassOptions.includePaths.push(path_join(modulePath, bootstrapPath, 'stylesheets'));
 	app.options.sassOptions.includePaths.push(path_join(modulePath, bootstrapPath, 'stylesheets/bootstrap'));
 	app.options.sassOptions.includePaths.push(path_join(modulePath, bootstrapPath, 'stylesheets/bootstrap/mixins'));
@@ -64,7 +64,7 @@ module.exports = {
     } else if (ibs_opts instanceof Array){
       ibs_opts.forEach(function(fileName) {
         app.import(path_join(bootstrapPath, 'javascripts/bootstrap', fileName + '.js'));
-      });  
+      });
     }
 
     // Import glyphicons
@@ -72,6 +72,7 @@ module.exports = {
     app.import(path_join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.svg'), { destDir: '/fonts/bootstrap' });
     app.import(path_join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.ttf'), { destDir: '/fonts/bootstrap' });
     app.import(path_join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.woff'), { destDir: '/fonts/bootstrap' });
+    app.import(path_join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.woff2'), { destDir: '/fonts/bootstrap' });
 
 
   }
