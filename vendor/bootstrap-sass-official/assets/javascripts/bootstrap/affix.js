@@ -42,7 +42,12 @@
     var position     = this.$element.offset()
     var targetHeight = this.$target.height()
 
-    if (offsetTop != null && this.affixed == 'top') return scrollTop < offsetTop ? 'top' : false
+    // Commenting this out and replacing it with a patched version. Bootstrap.Affix was breaking
+    // the layout when the body of the page is clicked. This is a fix per:
+    // http://stackoverflow.com/a/31892323
+
+    // if (offsetTop != null && this.affixed == 'top') return scrollTop < offsetTop ? 'top' : false
+    if (offsetTop != null && this.affixed == 'top') return scrollTop <= offsetTop ? 'top' : false
 
     if (this.affixed == 'bottom') {
       if (offsetTop != null) return (scrollTop + this.unpin <= position.top) ? false : 'bottom'
