@@ -20,14 +20,14 @@
     "ember-cli"
   ],
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 4.5.0"
   },
   "license": "MIT",
   "ember-addon": {
     "before": "ember-cli-sass"
   },
   "dependencies": {
-    "ember-cli-sass": "^3.0.2"
+    "ember-cli-sass": "^4.0"
   },
   "devDependencies": {}
 }
